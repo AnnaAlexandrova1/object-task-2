@@ -21,16 +21,21 @@ export default function orderByProps(obj, priority){
   function sort (byPriority, priority) {
     let arr = [];
     for(let i = 0; i < priority.length; i++){
-      arr.push(byPriority.filter(element => element[0] === priority[i]))
+      arr.push(byPriority.filter(element => element[0] === priority[i])[0])
     }
     return arr
   }
   let newPriority = sort (byPriority, priority);
+
   newPriority = newPriority.concat(byAlphabet)
-  const objSorted = {}
+  const arrSorted = []
   newPriority.forEach(item => {
-    objSorted[item[0]] = item[1]
+    arrSorted.push(
+      {name: item[0],
+       value: item[1]
+      }
+    )
   })
-  return objSorted
+  return arrSorted
 }
 
