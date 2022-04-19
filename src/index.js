@@ -1,5 +1,5 @@
 import './css/style.css';
 
-import './js/orderByProps';
+import './js/getItem';
 
 // TODO: write your code in app.js
